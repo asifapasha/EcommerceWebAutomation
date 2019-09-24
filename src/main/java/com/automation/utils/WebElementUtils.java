@@ -75,4 +75,15 @@ public class WebElementUtils {
         Select option = new Select(element);
         option.selectByVisibleText(value);
     }
+
+    public static WebElement createDynamicLocator(String xpath,String formatingString) {
+        WebElement element = driver.findElement(By.xpath(String.format(xpath,formatingString)));
+        waitForVisible(element);
+        return element;
+    }
+
+
+    public void demo1(String arg1, String arg2) {
+
+    }
 }

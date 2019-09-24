@@ -7,12 +7,13 @@ import static com.automation.utils.DriverUtils.getDriver;
 import static com.automation.utils.DriverUtils.tearDown;
 
 public class Hooks {
+    //control slash
     @Before
    public void setUp(){
-        getDriver();
-    }
+        getDriver(); }
+
     @After
     public void teardown(){
-        tearDown();
-    }
+   tearDown();
+ }
 }

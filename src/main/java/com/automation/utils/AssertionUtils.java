@@ -8,7 +8,7 @@ import static com.automation.utils.DriverUtils.getDriver;
 public class AssertionUtils {
     public static void assertPresent(WebElement element) {
         waitForVisible(element);
-        Assert.assertTrue(String.format("Element %s is displayed !!!", element.getText()), element.isDisplayed());
+        Assert.assertTrue(String.format("Element %s should be displayed !!!", element.getText()), element.isDisplayed());
     }
 
     private static void waitForVisible(WebElement element) {
@@ -21,6 +21,11 @@ public class AssertionUtils {
     public static void assertEquals(WebElement element, String actual, String expected) {
         waitForVisible(element);
         Assert.assertTrue(String.format("Actual text is %s and expected text is %s", actual, expected), actual.contains(expected));
+    }
+
+    public static void assertEquals(WebElement element, String expected) {
+        waitForVisible(element);
+        Assert.assertTrue(String.format("Actual text is %s and expected text is %s", element.getText(), expected), element.getText().contains(expected));
     }
 
     public static void assertPageTitle(String expected) {

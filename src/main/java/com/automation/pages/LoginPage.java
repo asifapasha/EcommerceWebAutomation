@@ -15,6 +15,7 @@ public class LoginPage {
     public LoginPage() {
         PageFactory.initElements(getDriver(), this);
     }
+
     @FindBy(id = "email_create")
     private WebElement emailAddressBtn;
     @FindBy(id = "SubmitCreate")
@@ -27,28 +28,37 @@ public class LoginPage {
     private WebElement Enterpassword;
     @FindBy(id = "SubmitLogin")
     private WebElement signInBtn;
-    @FindBy (xpath = "//*[@class=\"alert alert-danger\"]//li[text()='Authentication failed.']")
+    @FindBy(xpath = "//*[@class=\"alert alert-danger\"]//li[text()='Authentication failed.']")
     private WebElement authenticationErrorMessage;
 
     public void verifyUserIsOnLoginPage() {
         assertPresent(loginformPage);
-}
+    }
+
     public void login() {
         sendKeysTo(enterEmailAddress, getPropertyByKey("username"));
         sendKeysTo(Enterpassword, getPropertyByKey("password"));
         clickOnElement(signInBtn);
     }
-  public void login(String userid, String password){
+
+    public void login(String userid, String password) {
         sendKeysTo(enterEmailAddress, userid);
         sendKeysTo(Enterpassword, password);
         clickOnElement(signInBtn);
     }
-   public void userLogsinwithInvalidCredentials(){
-   assertPresent(authenticationErrorMessage);
-   }
-    public UserDataBean enterEmailFOrRegistration(){
+
+    public UserDataBean getRandomUserData() {
         UserDataBean userdatabean = new UserDataBean();
         userdatabean.generateRandomUserData();
+        return userdatabean;
+    }
+
+    public void userLogsinwithInvalidCredentials() {
+        assertPresent(authenticationErrorMessage);
+    }
+
+    public UserDataBean enterEmailFOrRegistration() {
+        UserDataBean userdatabean = getRandomUserData();
 
         //Enter random Email Address on login page
         sendKeysTo(emailAddressBtn, userdatabean.getUserEmail());
