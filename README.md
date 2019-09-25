@@ -1,8 +1,18 @@
-# EcommerceWebAutomation
-This framework is built from scratch for practice purpose.I have implemented the framework with the help of Java,  Selenium,  Page Object Model, Junit, BDD, Cucumber report, Maven etc on a demo web application called as "http://automationpractice.com/index.php".
+# Page Object model Test automation framework using Selenium with Java, Junit, Cucumber (BDD) and Maven-
+This is a sample project to demonstrate the implementation of page object model framework and how it can be used in selenium to automate web application "http://automationpractice.com/index.php" with BDD software development process.
 
-The aim of this project is to write feature file, develop scenrios and execute end to end test automation scripts in an CI/CD environment.
+The purpose of this project is to write feature file, develop scenarios and execute end to end test automation scripts in an CI/CD environment.It also strives for parallel execution of the scripts to make execution faster.
 
-I have also tried to achieve parallel execution of the scripts to make execution faster.
+Currently its in progress and aims to run on cross browsing platforms.
 
-In future the tests can also be run on cross browsing platforms.
+Dependency Java Maven
+
+###libraries used Selenium, Cucumber Reports etc
+
+Steps to clone execute the tests
+git clone https://github.com/asifapasha/EcommerceWebAutomation
+cd EcommerceWebAutomation
+mvn clean test
+
+
+
