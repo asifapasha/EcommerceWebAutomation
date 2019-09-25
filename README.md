@@ -10,8 +10,11 @@ Dependency Java Maven
 ###libraries used Selenium, Cucumber Reports etc
 
 Steps to clone execute the tests
+
 git clone https://github.com/asifapasha/EcommerceWebAutomation
+
 cd EcommerceWebAutomation
+
 mvn clean test
 
 
