@@ -12,6 +12,7 @@ import static com.automation.utils.AssertionUtils.*;
 import static com.automation.utils.CommonUtils.clickOnElement;
 import static com.automation.utils.ConfigUtils.getPropertyByKey;
 import static com.automation.utils.DriverUtils.getDriver;
+import static com.automation.utils.WebElementUtils.createDynamicLocator;
 
 public class HomePage {
     public HomePage() {
@@ -27,6 +28,9 @@ public class HomePage {
     @FindBy(xpath = "//*[@class='account']/span")
     private  WebElement registeredUserName;
 
+    @FindBy(id = "header_logo")
+    private  WebElement logoImage;
+
     public void verifyUserOnHomepage() {
         assertPageTitle(getPropertyByKey("homepage.title"));
     }
@@ -41,6 +45,15 @@ public class HomePage {
 
     public void verifyUserAfterRegistration(){
         String expectedText = System.getProperty("userdata.bean.firstName") + " " + System.getProperty("userdata.bean.lastName");
-        assertEquals(registeredUserName,registeredUserName.getText(), expectedText);
+        assertEquals(registeredUserName, expectedText);
     }
+
+    public void selectItemFromHOmePage(String itemName) {
+        clickOnElement(logoImage);
+        WebElement itemNameElement = createDynamicLocator("//*[contains(text(),'%s')]", itemName);
+        clickOnElement(itemNameElement);
+    }
+
+
+
 }

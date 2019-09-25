@@ -90,12 +90,7 @@ public class UserDataBean {
         company = RandomStringUtils.randomAlphabetic(10);
         address = RandomStringUtils.randomAlphanumeric(12);
 
-        System.out.println(userEmail+ "=====" + mobilePhoneNum + "=====" + password);
-    }
-
-    public static void main(String[] args) {
-        UserDataBean dataBean = new UserDataBean();
-            dataBean.generateRandomUserData();
+        System.out.println(userEmail + "=====" + mobilePhoneNum + "=====" + password);
     }
 
 }

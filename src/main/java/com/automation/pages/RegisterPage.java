@@ -76,15 +76,26 @@ public class RegisterPage {
 
         sendKeysTo(companyName, bean.getCompany());
         sendKeysTo(address, bean.getAddress());
-        sendKeysTo(cityName,"Birmingham");
-        selectValueFromDropDownByVisibleTxt(stateName,"Alabama");
+
+        // city , state and country name
+        String city = "Birmingham";
+        String state = "Alabama";
+        String country = "United States";
+        sendKeysTo(cityName,city);
+        selectValueFromDropDownByVisibleTxt(stateName,state);
         sendKeysTo(zipCode,"32234");
-        selectValueFromDropDownByVisibleTxt(countryName,"United States");
+        selectValueFromDropDownByVisibleTxt(countryName,country);
         sendKeysTo(mobilePhone,bean.getMobilePhoneNum());
         sendKeysTo(aliasName,bean.getAliasName());
         clickOnElement(registerBtn);
+
         System.setProperty("userdata.bean.firstName", bean.getFirstName());
         System.setProperty("userdata.bean.lastName", bean.getLastName());
+
+        // Setting the value for city, state and country
+        System.setProperty("userdata.bean.city", city);
+        System.setProperty("userdata.bean.state",state);
+        System.setProperty("userdata.bean.country",country);
     }
 
 }
