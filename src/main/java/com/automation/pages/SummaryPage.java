@@ -9,6 +9,7 @@ import java.util.List;
 
 import static com.automation.utils.AssertionUtils.assertEquals;
 import static com.automation.utils.AssertionUtils.assertPresent;
+import static com.automation.utils.CommonUtils.clickOnElement;
 import static com.automation.utils.DriverUtils.getDriver;
 import static com.automation.utils.WebElementUtils.waitForVisible;
 
@@ -37,8 +38,8 @@ public class SummaryPage {
     @FindBy(xpath = "//*[@class=\"price special-price\"]")
     private WebElement productPrice;
     @FindBy(xpath = "//*[contains(@class,'cart_quantity_input')]")
-
     private WebElement productQty;
+
     @FindBy(id = "total_product")
     private WebElement productTotalPrice;
     @FindBy(id = "total_shipping")
@@ -64,6 +65,8 @@ public class SummaryPage {
 
     @FindBy(xpath = "//ul[@class='address first_item item box']//span[@class='address_company']")
     private WebElement deliveryCompanyName;
+    @FindBy(xpath = "//*[@class='cart_navigation clearfix']//span[contains(text(),'Proceed')]")
+    private WebElement proceedTocheckOutbutton;
 
 
     public void verifyOrderedProductDetail() {
@@ -107,6 +110,9 @@ public class SummaryPage {
         assertEquals(cityAndStateName, System.getProperty("userdata.bean.city"));
         assertEquals(cityAndStateName, System.getProperty("userdata.bean.state"));
         assertEquals(countryName, System.getProperty("userdata.bean.country"));
+    }
+    public void proceedTocheckOut(){
+        clickOnElement(proceedTocheckOutbutton);
 
     }
 /*

@@ -7,6 +7,4 @@ import cucumber.api.java.en.When;
 
 public class OrderPageSteps {
     OrderPage orderpage = new OrderPage();
-
-
 }

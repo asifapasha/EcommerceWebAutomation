@@ -17,7 +17,7 @@ Feature: Place an order
     Then User verifies product details on Summary page
     When User clicks on proceed to checkout button on Summary page
 
-    Then Verify "Delivery and Billing" address on Address confirmation page
+    Then Verify "Billing Address" address on Address confirmation page
     Then User clicks on proceed to checkout button on Address confirmation page
 
     Then Verify terms of service on Shipping page
